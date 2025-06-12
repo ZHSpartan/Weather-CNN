@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Procesamiento de Imagen</title>
+</head>
+<body>
+    <h1>Sube una imagen</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <input type="submit" value="Procesar">
+    </form>
+
+    {% if image_data %}
+        <h2>Imagen recibida:</h2>
+        <img src="{{ image_data }}" width="300">
+    {% endif %}
+
+    {% if resultado %}
+        <h2>Resultado:</h2>
+        <p>{{ resultado }}</p>
+    {% endif %}
+</body>
+</html>
